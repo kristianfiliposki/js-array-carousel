@@ -1,45 +1,59 @@
 //al caricamento della pagina voglio inserire delle immagini
+const btndx=document.getElementById("btn-right");
+const btnsx=document.getElementById("btn-left");
+const container=document.getElementById("carousel");
+
+
+
 let foto=document.getElementsByClassName("photos")
-const btndx=document.getElementById("btn-right")
-const btnsx=document.getElementById("btn-left")
+let foto0 =0;
+let finalfoto=foto.length -1;
+
+foto[foto0].classList.remove("invisible")
 
 
-
-let imgAttuale = 0;
-const ultimaImg = 4;
-foto[imgAttuale].classList.remove("invisible");
-
-// gestire evento di click sulle freccette
-// al click, cambiare l'immagine visibile
 btnsx.addEventListener("click", function () {
     
-    if(imgAttuale != ultimaImg){
-    //rimuovo la visibilità sull'immagine attuale
-    foto[imgAttuale].classList.add("invisible")
+    foto[foto0].classList.add("invisible")
     
-		//aggiorno il contatore dell'immagine attuale
-		imgAttuale--;
+		foto0--;
 
-		//aggiungo la visibilità sulla prossima immagine
-		foto[imgAttuale].classList.remove("invisible");
-    }
+		foto[foto0].classList.remove("invisible");
+    
+
+
 
 });
 
-btndx.addEventListener("click", function () {
 
-        if(imgAttuale < ultimaImg){
-		//rimuovo la visibilità sull'immagine attuale
-		foto[imgAttuale].classList.add("invisible")
+btndx.addEventListener("click",function(){
+    
+    if(foto0 < finalfoto){
+        foto[foto0].classList.add("invisible")
+        foto0++
+        foto[foto0].classList.remove("invisible")
 
-		//aggiorno il contatore dell'immagine attuale
-		imgAttuale++;
-
-		//aggiungo la visibilità sulla prossima immagine
-		foto[imgAttuale].classList.remove("invisible");
         }
 
-}); 
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
