@@ -3,8 +3,6 @@ const btndx=document.getElementById("btn-right");
 const btnsx=document.getElementById("btn-left");
 const container=document.getElementById("carousel");
 
-
-
 let foto=document.getElementsByClassName("photos");
 let foto0 =0;
 let finalfoto=foto.length -1;
@@ -17,6 +15,9 @@ btndx.addEventListener("click",function(){
         foto[foto0].classList.add("invisible");
         foto0++
         foto[foto0].classList.remove("invisible");
+    }
+    else{
+        alert("Torna indietro!!")
     }
 })
 
