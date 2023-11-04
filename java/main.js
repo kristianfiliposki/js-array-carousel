@@ -12,30 +12,21 @@ let finalfoto=foto.length -1;
 foto[foto0].classList.remove("invisible")
 
 
-btnsx.addEventListener("click", function () {
-    
-    foto[foto0].classList.add("invisible")
-    
-		foto0--;
-
-		foto[foto0].classList.remove("invisible");
-    
-
-
-
-});
-
-
 btndx.addEventListener("click",function(){
-    
     if(foto0 < finalfoto){
         foto[foto0].classList.add("invisible")
         foto0++
         foto[foto0].classList.remove("invisible")
-
-        }
-
+    }
 })
+
+btnsx.addEventListener("click", function () {
+    if(foto0 > 0){
+        foto[foto0].classList.add("invisible");
+        foto0--;
+        foto[foto0].classList.remove("invisible");
+    }
+});
 
 
 
